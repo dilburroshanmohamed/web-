@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Form Registration</title>
+
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .form-container {
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 350px;
+        }
+
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 95%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        button{
+            background-color:grey;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="form-container">
+        <form>
+            <fieldset>
+                <legend>Personal Information</legend>
+                
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your name" list="name-options">
+
+                <datalist id="name-options">
+                    <option value="Jyothish">
+                    <option value="Ansar">
+                    <option value="Sooraj">
+                    <option value="fazil">
+	    <option value="moideen">
+                </datalist>
+
+                <label for="gender">Gender:</label>
+                <select id="gender" name="gender" required>
+                    <option>Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+
+                <label for="add">Address:</label>
+                <textarea id="bio" name="add" rows="4" placeholder="Address..."></textarea>
+            </fieldset> <br>
+
+            <button>Submit</button>
+        </form>
+    </div>
+
+</body>
+</html>
