@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="mystyle.css">
+<style>
+body {
+  background-color: linen;
+}
+
+h1 {
+  color: yellow;
+  margin-left: 40px;
+} 
+</style>
+</head>
+<body>
+
+<h1>welcome</h1>
+<h1 style="color:red;text-align:center;">This is a heading</h1>
+<p style="color:red;">This is a paragraph.</p>
+<h2>heloo</h2>
+
+</body>
+</html>
+
+
