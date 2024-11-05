@@ -1,0 +1,30 @@
+<html>
+<head>
+	<style>
+	#hoverContent {
+	cursor:pointer;
+	width:300px;
+	}
+	</style>
+
+</head>
+<body>
+<center>
+	<div id="hoverContent" onmouseover="showContent()" onmouseout="hideContent()">
+	<center><h2>Touch to view</h2></center>
+	<div id="newContent">
+	<img src="rr.jfif" alt="New image" style="width=100%;">
+	<p><h4>This is the new model of RR</h4></p>
+	</div>
+	</div>
+	<script>
+	function showContent() {
+	document.getElementById('newContent').style.display='block';
+	}
+	function hideContent() {
+	document.getElementById('newContent').style.display='none';
+	}
+</script>
+</center>
+</body>
+</html>
