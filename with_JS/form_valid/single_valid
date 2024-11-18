@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Registration Form</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+      font-family: Arial, sans-serif;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 30px;
+      max-width: 700px;
+      width: 100%;
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    .form-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 25px;
+    }
+    .form-group {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .form-group label {
+      font-weight: bold;
+      color: #555;
+      margin-bottom: 5px;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 16px;
+      width: 100%;
+      margin-bottom: 10px; 
+    }
+    .form-group textarea {
+      resize: none;
+    }
+    .error {
+      color: #e63946;
+      font-size: 0.9em;
+      margin-top: 5px;
+    }
+    button.submit-btn {
+      background-color: #4a90e2;
+      color: #fff;
+      border: none;
+      padding: 12px;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    button.submit-btn:hover {
+      background-color: #357ab8;
+    }
+  </style>
+</head>
+<body>
+  <form id="registrationForm" onsubmit="return validateForm()">
+    <h2><u>Registration Form</u></h2>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="fname">
+        <div id="fnameError" class="error"></div>
+      </div><br>
+
+      <div class="form-group">
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lname">
+        <div id="lnameError" class="error"></div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username">
+        <div id="usernameError" class="error"></div>
+      </div><br>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password">
+        <div id="passwordError" class="error"></div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="confirmPassword">Confirm Password</label>
+        <input type="password" id="confirmPassword" name="confirmPassword">
+        <div id="confirmPasswordError" class="error"></div>
+      </div><br>
+
+      <div class="form-group">
+        <label for="gender">Gender</label>
+        <select id="gender" name="gender">
+          <option value="">Select Gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+          <option value="other">Other</option>
+        </select>
+        <div id="genderError" class="error"></div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group">
+        <label for="mobile">Mobile</label>
+        <input type="text" id="mobile" name="mobile">
+        <div id="mobileError" class="error"></div>
+      </div><br>
+
+      <div class="form-group">
+        <label for="email">Email ID</label>
+        <input type="email" id="email" name="email">
+        <div id="emailError" class="error"></div>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="address">Address</label>
+      <textarea id="address" name="address"></textarea>
+      <div id="addressError" class="error"></div>
+    </div>
+
+    <button type="submit" class="submit-btn">Register</button>
+  </form>
+
+  <script>
+    function validateForm() {
+      let isValid = true;
+      document.querySelectorAll('.error').forEach(error => error.textContent = '');
+
+      const fname = document.getElementById('fname').value.trim();
+      if (fname === '') {
+        document.getElementById('fnameError').textContent = 'First name is required';
+        isValid = false;
+      }
+
+      const lname = document.getElementById('lname').value.trim();
+      if (lname === '') {
+        document.getElementById('lnameError').textContent = 'Last name is required';
+        isValid = false;
+      }
+
+      const username = document.getElementById('username').value.trim();
+      if (username === '') {
+        document.getElementById('usernameError').textContent = 'Username is required';
+        isValid = false;
+      }
+
+      const password = document.getElementById('password').value;
+      if (password.length < 8) {
+        document.getElementById('passwordError').textContent = 'Password must be at least 8 characters';
+        isValid = false;
+      }
+
+      const confirmPassword = document.getElementById('confirmPassword').value;
+      if (confirmPassword !== password) {
+        document.getElementById('confirmPasswordError').textContent = 'Passwords do not match';
+        isValid = false;
+      }
+
+      const gender = document.getElementById('gender').value;
+      if (gender === '') {
+        document.getElementById('genderError').textContent = 'Gender is required';
+        isValid = false;
+      }
+
+      const mobile = document.getElementById('mobile').value.trim();
+      const mobilePattern = /^[0-9]{10}$/;
+      if (!mobilePattern.test(mobile)) {
+        document.getElementById('mobileError').textContent = 'Mobile must be 10 digits';
+        isValid = false;
+      }
+
+      const email = document.getElementById('email').value.trim();
+      const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+      if (!emailPattern.test(email)) {
+        document.getElementById('emailError').textContent = 'Invalid email format';
+        isValid = false;
+      }
+
+      if (isValid) {
+        alert('Registration successful!');
+      }
+
+      return isValid;
+    }
+  </script>
+</body>
+</html>
