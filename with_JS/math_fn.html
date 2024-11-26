@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Methods</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f9f9f9; margin: 20px; }
+        h1, h2 { color: #333; }
+        code { background: #e8e8e8; padding: 4px 8px; font-size: 1em; }
+        .output { font-weight: bold; color: green; }
+    </style>
+</head>
+<body>
+
+    <h1>JavaScript String and Math Methods</h1>
+
+    <h2>String Methods</h2>
+    <p><code>toUpperCase()</code>:</p>
+    <code>let str = "hello";</code><br>
+    <code>str.toUpperCase();</code><br>
+    <p class="output">Output: <span id="upperStr"></span></p>
+
+    <p><code>toLowerCase()</code>:</p>
+    <code>let str = "HELLO";</code><br>
+    <code>str.toLowerCase();</code><br>
+    <p class="output">Output: <span id="lowerStr"></span></p>
+
+    <p><code>charAt()</code>:</p>
+    <code>let str = "hello";</code><br>
+    <code>str.charAt(1);</code><br>
+    <p class="output">Output: <span id="charAt"></span></p>
+
+    <h2>Math Methods</h2>
+    <p><code>Math.max()</code>:</p>
+    <code>Math.max(1, 3, 5);</code><br>
+    <p class="output">Output: <span id="max"></span></p>
+
+    <p><code>Math.min()</code>:</p>
+    <code>Math.min(1, -3, 5);</code><br>
+    <p class="output">Output: <span id="min"></span></p>
+
+    <p><code>Math.random()</code>:</p>
+    <code>Math.random();</code><br>
+    <p class="output">Output: <span id="randomNum"></span></p>
+
+    <script>
+        // String Methods
+        let str1 = "hello";
+        let str2 = "HELLO";
+        document.getElementById("upperStr").textContent = str1.toUpperCase();
+        document.getElementById("lowerStr").textContent = str2.toLowerCase();
+        document.getElementById("charAt").textContent = str1.charAt(1);
+
+        // Math Methods
+        document.getElementById("max").textContent = Math.max(1, 3, 5);
+        document.getElementById("min").textContent = Math.min(1, -3, 5);
+        document.getElementById("randomNum").textContent = Math.random().toFixed(2);
+	
+
+    </script>
+
+</body>
+</html>
