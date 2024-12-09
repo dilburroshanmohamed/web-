@@ -2,7 +2,7 @@
         function fibonacciSeries($n) {
                 $num1 = 0;
                 $num2 = 1;
-                echo "Fibonacci Series up to $n terms:\n";
+                echo "Fibonacci Series up to $n terms:<br>\n";
                 for ($i = 0; $i < $n; $i++) {
                         echo $num1 . " ";
                         $num3 = $num1 + $num2;
